@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <include-->
+<!--        layout="@layout/toolbar"-->
+<!--        android:id="@+id/my_toolbar"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_below="@+id/my_toolbar"-->
+<!--        android:layout_margin="5dp"></LinearLayout>-->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/mat">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/button_choose_image"
+        android:text="Choose Image"
+        android:layout_centerHorizontal="true"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="150dp"
+        android:padding="15dp"
+        android:layout_height="50dp"
+        android:background="@drawable/item"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/mat"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="3dp"
+        android:elevation="3dp"
+        app:contentPadding="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="10dp"
+        android:id="@+id/card"
+        android:layout_below="@id/button_choose_image"
+        android:layout_above="@id/progress_bar">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lay"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/lay"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/button_upload"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:text="send"
+            android:drawableLeft="@drawable/ic_action_up"
+            android:background="@drawable/item"
+           />
+
+        <Button
+            android:id="@+id/button_download"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:text="receive"
+            android:drawableRight="@drawable/ic_action_re"
+            android:background="@drawable/item"
+            android:layout_width="120dp"
+            android:padding="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="50dp"
+           />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
